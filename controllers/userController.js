@@ -1,6 +1,4 @@
-const router = require('express').Router()
-
-//YOUR CODE HERE BUDDY
+const { Reaction, Thought, User } = require('../models')
 
 // GET all users
 
@@ -13,7 +11,6 @@ const router = require('express').Router()
 //   "username": "lernantino",
 //   "email": "lernantino@gmail.com"
 // }
-
 // PUT to update a user by its _id
 
 // DELETE to remove user by its _id
@@ -22,6 +19,3 @@ const router = require('express').Router()
 
 // DELETE to remove a friend from a user's friend list
 
-
-
-module.exports = router

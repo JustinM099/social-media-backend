@@ -1,6 +1,4 @@
-const router = require('express').Router()
-
-//YOUR CODE HERE BUDDY
+const { Reaction, Thought, User } = require('../models')
 
 // GET to get all thoughts
 
@@ -23,5 +21,3 @@ const router = require('express').Router()
 // POST to create a reaction stored in a single thought's reactions array field
 
 // DELETE to pull and remove a reaction by the reaction's reactionId value
-
-module.exports = router
