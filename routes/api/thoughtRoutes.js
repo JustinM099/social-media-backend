@@ -1,9 +1,11 @@
 const router = require('express').Router()
-
+const {
+   getThoughts
+  } = require('../../controllers/thoughtController.js')
 //YOUR CODE HERE BUDDY
 
 // GET to get all thoughts
-
+router.route('/').get(getThoughts)
 // GET to get a single thought by its _id
 
 // POST to create a new thought (don't forget to push the created thought's _id to the associated user's thoughts array field)
