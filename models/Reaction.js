@@ -4,10 +4,16 @@ const thoughtSchema = require('./Thought');
 const reactionSchema = new Schema(
   {
     reactionId: {
-   //todo: code here
+        type: Schema.Types.ObjectId,
+        default: () => new Types.ObjectId()
     },
     reactionBody: {
     //todo: code here
+    type: String,
+    required: true,
+    trim: true,
+    minlength: 1,
+    maxlength: 280
     },
     createdAt: {
       type: Date,
@@ -29,4 +35,4 @@ const reactionSchema = new Schema(
 );
 
 
-module.exports = thoughtSchema;
+module.exports = reactionSchema;

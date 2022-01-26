@@ -1,5 +1,7 @@
 const { Reaction, Thought, User } = require('../models')
 
+//------------------USER ROUTES----------------//
+
 // GET all users
 const getUsers = async (req, res) => {
     try {
@@ -13,13 +15,15 @@ const getUsers = async (req, res) => {
     }
 }
 
-
 // GET a single user by its _id and populated thought and friend data
 const getOneUser = async (req, res) => {
     try {
         const oneUser = await User.findOne({ _id: req.params.id })
         .populate('thoughts')
         .populate('friends')
+        if(!oneUser){
+            res.status(404).json({message: 'No Such User, Sorry.'})
+        }
         res.json(oneUser)
     } catch (err) {
         console.log(err)
@@ -60,6 +64,9 @@ const deleteUser = async (req, res) => {
         res.status(500).json(err)
     }
 }
+
+
+//---------------------FRIEND ROUTES---------------//
 
 // POST to add a new friend to a user's friend list
 const addFriend = async (req, res) => {

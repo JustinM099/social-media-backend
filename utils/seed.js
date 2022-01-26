@@ -1,10 +1,11 @@
 const connection = require('../config/connection')
-const { User } = require('../models')
+const { User, Thought } = require('../models')
 
 // Creates a connection to mongodb
 connection.once('open', async () => {
     // Delete the entries in the collection
     await User.deleteMany({})
+    await Thought.deleteMany({})
 
     // user array to populate User collection
     const users = [
@@ -18,8 +19,23 @@ connection.once('open', async () => {
         }
     ]
 
+    const thoughts = [
+        {
+            thoughtText: 'A long time ago, in a Galaxy far, far away..',
+            username: 'Steve'
+        },
+        {
+            thoughtText: 'The fact of the matter is that Han shot first.',
+            username: 'Sally'
+        }
+    ]
+
     // waiting for users to be inserted into the database
     await User.collection.insertMany(users)
 
+    await Thought.collection.insertMany(thoughts)
+
     console.table(users)
+    console.table(thoughts)
+    process.exit()
 })
