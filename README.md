@@ -23,7 +23,7 @@
   
   ## Video
   
-    There is a video walkthrough of this project. You can view it here: 
+    There is a video walkthrough of this project. You can view it here: https://watch.screencastify.com/v/h6ZY1WqSiRMuyKN5hw9M
 
   ## Technologies Used
 
